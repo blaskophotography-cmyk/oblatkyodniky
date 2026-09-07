@@ -1,0 +1,1739 @@
+/* =========================================================
+   VIANOČNÉ OBLÁTKY BY NIKA
+   STYLE.CSS
+========================================================= */
+
+:root {
+    --cream: #f7f2ea;
+    --cream-dark: #eee5d9;
+    --white: #ffffff;
+
+    --brown-dark: #30251e;
+    --brown: #604633;
+    --brown-light: #8a6a51;
+
+    --gold: #b58a52;
+    --gold-light: #d8bd91;
+
+    --text: #332b25;
+    --muted: #81756b;
+
+    --border: #e3d9cd;
+
+    --shadow: 0 18px 50px rgba(48, 37, 30, 0.08);
+
+    --radius: 18px;
+
+    --transition: 0.3s ease;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: "DM Sans", sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+button {
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    background: var(--cream);
+    padding: 34px 0;
+}
+
+.heroInner {
+    width: min(1380px, 92%);
+    min-height: 680px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+
+    background: var(--white);
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow);
+}
+
+.heroText {
+    padding: 70px 70px 70px 80px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf9 0%,
+            #f8f2e9 100%
+        );
+}
+
+.logo {
+    width: 245px;
+    max-width: 80%;
+    margin-bottom: 32px;
+}
+
+.heroLine {
+    width: 55px;
+    height: 2px;
+
+    background: var(--gold);
+
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(42px, 4.2vw, 67px);
+
+    line-height: 1.08;
+
+    font-weight: 600;
+
+    color: var(--brown-dark);
+
+    max-width: 620px;
+
+    margin-bottom: 28px;
+}
+
+.hero p {
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: var(--muted);
+
+    max-width: 500px;
+
+    margin-bottom: 38px;
+}
+
+.heroButton {
+    width: fit-content;
+
+    padding: 15px 34px;
+
+    background: var(--brown-dark);
+
+    color: var(--white);
+
+    border-radius: 6px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.03em;
+
+    transition: var(--transition);
+}
+
+.heroButton:hover {
+    background: var(--gold);
+    transform: translateY(-2px);
+}
+
+.heroImage {
+    min-height: 680px;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.heroImage::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.04),
+            rgba(0, 0, 0, 0)
+        );
+
+    pointer-events: none;
+}
+
+.heroImage img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+}
+
+
+/* =========================================================
+   PONUKA
+========================================================= */
+
+.offer {
+    width: min(1100px, 92%);
+
+    margin: 0 auto;
+
+    padding: 110px 0 100px;
+}
+
+.offerHeader {
+    text-align: center;
+
+    max-width: 680px;
+
+    margin: 0 auto 55px;
+}
+
+.eyebrow {
+    display: block;
+
+    color: var(--gold);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.18em;
+
+    margin-bottom: 15px;
+}
+
+.offerHeader h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(36px, 4vw, 52px);
+
+    font-weight: 600;
+
+    color: var(--brown-dark);
+
+    margin-bottom: 18px;
+}
+
+.offerHeader p {
+    color: var(--muted);
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   PRODUKTY
+========================================================= */
+
+.products {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   KATEGÓRIA
+========================================================= */
+
+.category {
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+    transition: var(--transition);
+
+    box-shadow:
+        0 4px 18px rgba(48, 37, 30, 0.035);
+}
+
+.category:hover {
+    border-color: var(--gold-light);
+}
+
+.category.open {
+    box-shadow: var(--shadow);
+
+    border-color: var(--gold-light);
+}
+
+
+/* =========================================================
+   KATEGÓRIA - HLAVIČKA
+========================================================= */
+
+.categoryTitle {
+    width: 100%;
+
+    min-height: 92px;
+
+    padding: 23px 28px;
+
+    background: var(--white);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.categoryTitle:hover {
+    background: #fdfbf8;
+}
+
+.categoryLeft {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.categoryName {
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+
+    font-weight: 600;
+
+    color: var(--brown-dark);
+}
+
+.categoryPack {
+    font-size: 13px;
+
+    color: var(--muted);
+
+    letter-spacing: 0.02em;
+}
+
+.categoryArrow {
+    width: 34px;
+    height: 34px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: var(--brown);
+
+    font-size: 15px;
+
+    transition: var(--transition);
+
+    flex-shrink: 0;
+}
+
+.category.open .categoryArrow {
+    transform: rotate(180deg);
+
+    background: var(--brown-dark);
+
+    color: var(--white);
+
+    border-color: var(--brown-dark);
+}
+
+
+/* =========================================================
+   ROZBALENÝ OBSAH
+========================================================= */
+
+.categoryContent {
+    display: grid;
+
+    grid-template-rows: 0fr;
+
+    transition:
+        grid-template-rows 0.4s ease,
+        border-top 0.4s ease;
+
+    border-top: 1px solid transparent;
+}
+
+.category.open .categoryContent {
+    grid-template-rows: 1fr;
+
+    border-top-color: var(--border);
+}
+
+.categoryContentInner {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   PRODUKTOVÝ ZOZNAM
+========================================================= */
+
+.productsList {
+    padding: 8px 28px 18px;
+}
+
+
+/* =========================================================
+   PRODUKT
+========================================================= */
+
+.productRow {
+    min-height: 92px;
+
+    display: grid;
+
+    grid-template-columns: 1fr auto;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid #eee7df;
+}
+
+.productRow:last-child {
+    border-bottom: 0;
+}
+
+.productInfo {
+    min-width: 0;
+}
+
+.productName {
+    font-size: 17px;
+
+    font-weight: 600;
+
+    color: var(--text);
+
+    margin-bottom: 5px;
+}
+
+.productGroup {
+    font-size: 12px;
+
+    color: var(--muted);
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+}
+
+.productPrice {
+    font-size: 18px;
+
+    font-weight: 700;
+
+    color: var(--brown);
+}
+
+
+/* =========================================================
+   PRAVÁ STRANA PRODUKTU
+========================================================= */
+
+.productRight {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   MNOŽSTVO
+========================================================= */
+
+.quantityBox {
+    display: flex;
+
+    align-items: center;
+
+    height: 42px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 7px;
+
+    overflow: hidden;
+
+    background: var(--white);
+}
+
+.quantityButton {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: transparent;
+
+    color: var(--brown);
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition: var(--transition);
+}
+
+.quantityButton:hover {
+    background: var(--cream);
+
+    color: var(--brown-dark);
+}
+
+.quantityValue {
+    min-width: 38px;
+
+    text-align: center;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: var(--text);
+}
+
+
+/* =========================================================
+   PRIDAŤ
+========================================================= */
+
+.addButton {
+    height: 42px;
+
+    padding: 0 20px;
+
+    border-radius: 7px;
+
+    background: var(--brown-dark);
+
+    color: var(--white);
+
+    cursor: pointer;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition: var(--transition);
+}
+
+.addButton:hover {
+    background: var(--gold);
+
+    transform: translateY(-1px);
+}
+
+.addButton:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   ORDER SECTION
+========================================================= */
+
+.orderSection {
+    background: #eee6dc;
+
+    padding: 105px 0 120px;
+}
+
+.orderLayout {
+    width: min(1100px, 92%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 0.75fr 1.25fr;
+
+    gap: 70px;
+
+    align-items: start;
+}
+
+.orderIntro {
+    padding-top: 35px;
+
+    position: sticky;
+
+    top: 35px;
+}
+
+.orderIntro h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(36px, 4vw, 50px);
+
+    font-weight: 600;
+
+    line-height: 1.15;
+
+    color: var(--brown-dark);
+
+    margin-bottom: 20px;
+}
+
+.orderIntro p {
+    color: var(--muted);
+
+    line-height: 1.8;
+
+    font-size: 16px;
+
+    max-width: 360px;
+}
+
+
+/* =========================================================
+   ORDER CARD
+========================================================= */
+
+.orderCard {
+    background: var(--white);
+
+    border-radius: 22px;
+
+    padding: 38px;
+
+    box-shadow: var(--shadow);
+}
+
+.cartHeader {
+    margin-bottom: 25px;
+}
+
+.smallLabel {
+    display: block;
+
+    color: var(--gold);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.15em;
+
+    margin-bottom: 8px;
+}
+
+.cartHeader h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 29px;
+
+    font-weight: 600;
+
+    color: var(--brown-dark);
+}
+
+
+/* =========================================================
+   KOŠÍK
+========================================================= */
+
+.cartItems {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0;
+
+    border-top: 1px solid var(--border);
+}
+
+.emptyCart {
+    padding: 28px 0;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   CART ITEM
+========================================================= */
+
+.cartItem {
+    padding: 17px 0;
+
+    border-bottom: 1px solid #eee7df;
+
+    display: grid;
+
+    grid-template-columns: 1fr auto;
+
+    gap: 15px;
+
+    align-items: center;
+}
+
+.cartItemName {
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: var(--text);
+}
+
+.cartItemDetails {
+    font-size: 12px;
+
+    color: var(--muted);
+
+    margin-top: 4px;
+}
+
+.cartItemPrice {
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: var(--brown);
+}
+
+.cartControls {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 9px;
+}
+
+.qtyButton {
+    width: 28px;
+    height: 28px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 5px;
+
+    background: var(--white);
+
+    color: var(--brown);
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+.qtyButton:hover {
+    background: var(--cream);
+
+    border-color: var(--gold);
+}
+
+.qtyValue {
+    min-width: 24px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.removeButton {
+    margin-left: 8px;
+
+    background: none;
+
+    color: #9b6b61;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    transition: var(--transition);
+}
+
+.removeButton:hover {
+    color: #8a3023;
+}
+
+
+/* =========================================================
+   TOTAL
+========================================================= */
+
+.cartTotal {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 25px 0;
+
+    margin-bottom: 10px;
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 16px;
+
+    color: var(--muted);
+}
+
+.cartTotal strong {
+    color: var(--brown-dark);
+
+    font-size: 28px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.orderForm {
+    margin-top: 25px;
+}
+
+.formTitle {
+    font-family: "Playfair Display", serif;
+
+    font-size: 26px;
+
+    font-weight: 600;
+
+    color: var(--brown-dark);
+
+    margin-bottom: 22px;
+}
+
+.infoBox {
+    padding: 14px 16px;
+
+    margin-bottom: 25px;
+
+    background: #f8f2e9;
+
+    border-left: 3px solid var(--gold);
+
+    color: var(--brown);
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.formGroup {
+    margin-bottom: 17px;
+}
+
+.formGroup label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: var(--brown);
+}
+
+.formGroup input,
+.formGroup textarea {
+    width: 100%;
+
+    border: 1px solid var(--border);
+
+    border-radius: 7px;
+
+    background: #fffdfb;
+
+    color: var(--text);
+
+    padding: 13px 14px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: var(--transition);
+}
+
+.formGroup input {
+    height: 48px;
+}
+
+.formGroup textarea {
+    resize: vertical;
+
+    min-height: 110px;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+    border-color: var(--gold);
+
+    box-shadow: 0 0 0 3px rgba(181, 138, 82, 0.10);
+}
+
+.formRow {
+    display: grid;
+
+    grid-template-columns: 0.7fr 1.3fr;
+
+    gap: 15px;
+}
+
+
+/* =========================================================
+   ODOSLAŤ
+========================================================= */
+
+.submitButton {
+    width: 100%;
+
+    height: 54px;
+
+    margin-top: 8px;
+
+    border-radius: 7px;
+
+    background: var(--brown-dark);
+
+    color: var(--white);
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+.submitButton:hover {
+    background: var(--gold);
+
+    transform: translateY(-2px);
+}
+
+.submitButton:disabled {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background: var(--brown-dark);
+
+    color: rgba(255,255,255,0.65);
+
+    padding: 45px 20px;
+}
+
+.footerInner {
+    width: min(1000px, 92%);
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.footerLogo {
+    width: 135px;
+
+    margin: 0 auto 18px;
+
+    filter: brightness(0) invert(1);
+
+    opacity: 0.9;
+}
+
+.footerInner p {
+    font-size: 14px;
+
+    margin-bottom: 6px;
+}
+
+.footerInner span {
+    font-size: 12px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================================================
+   ANIMÁCIE
+========================================================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.category.open .categoryContentInner {
+    animation: fadeUp 0.35s ease;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .heroInner {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+    }
+
+    .heroText {
+        padding: 65px 50px;
+
+        text-align: center;
+
+        align-items: center;
+    }
+
+    .heroLine {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero h1 {
+        max-width: 700px;
+    }
+
+    .hero p {
+        max-width: 600px;
+    }
+
+    .heroImage {
+        min-height: 480px;
+    }
+
+    .orderLayout {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .orderIntro {
+        position: static;
+
+        padding-top: 0;
+    }
+
+    .orderIntro p {
+        max-width: 600px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBIL
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .hero {
+        padding: 12px;
+    }
+
+    .heroInner {
+        width: 100%;
+
+        border-radius: 20px;
+    }
+
+    .heroText {
+        padding: 48px 25px 52px;
+    }
+
+    .logo {
+        width: 190px;
+
+        margin-bottom: 25px;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+
+        line-height: 1.1;
+    }
+
+    .hero p {
+        font-size: 16px;
+
+        line-height: 1.7;
+
+        margin-bottom: 30px;
+    }
+
+    .heroButton {
+        width: 100%;
+
+        max-width: 300px;
+
+        text-align: center;
+    }
+
+    .heroImage {
+        min-height: 330px;
+    }
+
+    .offer {
+        width: 92%;
+
+        padding: 75px 0 70px;
+    }
+
+    .offerHeader {
+        margin-bottom: 35px;
+    }
+
+    .offerHeader h2 {
+        font-size: 36px;
+    }
+
+    .categoryTitle {
+        min-height: 82px;
+
+        padding: 20px;
+    }
+
+    .categoryName {
+        font-size: 21px;
+    }
+
+    .productsList {
+        padding: 5px 20px 12px;
+    }
+
+    .productRow {
+        grid-template-columns: 1fr;
+
+        gap: 17px;
+
+        padding: 20px 0;
+    }
+
+    .productRight {
+        justify-content: space-between;
+
+        width: 100%;
+    }
+
+    .quantityBox {
+        flex-shrink: 0;
+    }
+
+    .addButton {
+        flex: 1;
+
+        width: auto;
+    }
+
+    .orderSection {
+        padding: 70px 0 80px;
+    }
+
+    .orderCard {
+        padding: 25px 20px;
+
+        border-radius: 17px;
+    }
+
+    .cartTotal strong {
+        font-size: 25px;
+    }
+
+    .formRow {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+}
+
+
+/* =========================================================
+   MALÝ MOBIL
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .heroText {
+        padding: 40px 20px 45px;
+    }
+
+    .logo {
+        width: 165px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .heroImage {
+        min-height: 280px;
+    }
+
+    .offerHeader h2 {
+        font-size: 31px;
+    }
+
+    .categoryName {
+        font-size: 19px;
+    }
+
+    .productRight {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .quantityBox {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .addButton {
+        width: 100%;
+
+        flex: none;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+}
+/* ===== ÚPRAVA PODSKUPÍN ===== */
+
+.subcategoryBox {
+    margin-top: 18px;
+    border: 1px solid #e6d8c7;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.subcategoryTitle {
+    padding: 14px 18px;
+    background: #faf5ee;
+    border-bottom: 1px solid #e6d8c7;
+}
+
+.subcategoryTitle > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.subcategoryTitle strong {
+    font-size: 18px;
+    font-weight: 700;
+    color: #68401f;
+}
+
+.subcategoryTitle span {
+    font-size: 13px;
+    font-weight: 500;
+    color: #8b5a2b;
+    background: white;
+    border: 1px solid #ead7b9;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+/* ===== OPRAVA LOGA V PÄTIČKE ===== */
+
+footer {
+    padding: 35px 20px;
+    text-align: center;
+}
+
+.footerLogo {
+    width: 120px !important;
+    height: 120px !important;
+    object-fit: contain;
+    margin: 0 auto 15px;
+    display: block;
+}
+
+/* =====================================================
+   MOBILNÁ VERZIA
+===================================================== */
+
+@media (max-width: 768px) {
+
+    /* HLAVNÁ STRÁNKA */
+
+    .container {
+        width: 94%;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding: 35px 0;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 60vh;
+        padding: 35px 20px;
+    }
+
+    .logo {
+        width: 150px;
+        margin-bottom: 18px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 28px;
+    }
+
+    .heroButton {
+        width: 100%;
+        max-width: 300px;
+        padding: 16px 25px;
+    }
+
+
+    /* NADPIS PONUKY */
+
+    .sectionTitle {
+        text-align: center;
+        margin-bottom: 22px;
+    }
+
+    .sectionTitle h2 {
+        font-size: 32px;
+    }
+
+    .sectionTitle p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+
+    /* HLAVNÁ KATEGÓRIA */
+
+    .categoryTitle {
+        padding: 18px 20px;
+        min-height: 65px;
+    }
+
+    .categoryName {
+        font-size: 24px;
+    }
+
+    .categoryArrow {
+        width: 34px;
+        height: 34px;
+    }
+
+
+    /* OBSAH KATEGÓRIE */
+
+    .categoryContentInner {
+        padding: 0 14px;
+    }
+
+    .category.open .categoryContentInner {
+        padding-bottom: 18px;
+    }
+
+
+    /* PODSKUPINY */
+
+    .subcategoryBox {
+        margin-top: 14px;
+    }
+
+    .subcategoryTitle {
+        padding: 13px 14px;
+    }
+
+    .subcategoryTitle > div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .subcategoryTitle strong {
+        font-size: 17px;
+    }
+
+    .subcategoryTitle span {
+        font-size: 11px;
+        padding: 5px 9px;
+        white-space: nowrap;
+    }
+
+
+    /* PRODUKT */
+
+    .productRow {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .productInfo {
+        width: 100%;
+    }
+
+    .productName {
+        font-size: 16px;
+    }
+
+    .productPrice {
+        font-size: 18px;
+    }
+
+
+    /* OVLÁDANIE PRODUKTU */
+
+    .productRight {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .quantityBox {
+        justify-content: center;
+    }
+
+    .quantityButton {
+        width: 38px;
+        height: 38px;
+        font-size: 19px;
+    }
+
+    .quantityValue {
+        min-width: 35px;
+        font-size: 17px;
+    }
+
+    .addButton {
+        width: 100%;
+        min-width: 0;
+        height: 46px;
+        font-size: 14px;
+    }
+
+
+    /* =================================================
+       KOŠÍK
+    ================================================= */
+
+    #cart {
+        position: relative;
+        top: auto;
+        width: 100%;
+        padding: 22px;
+    }
+
+    .cartHeader h2 {
+        font-size: 27px;
+    }
+
+    .cartItem {
+        padding: 14px;
+    }
+
+    .cartItemName {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .cartItemPrice {
+        font-size: 17px;
+    }
+
+    .cartControls {
+        flex-wrap: wrap;
+    }
+
+    .total {
+        font-size: 19px;
+    }
+
+    #totalPrice {
+        font-size: 27px;
+    }
+
+
+    /* =================================================
+       FORMULÁR
+    ================================================= */
+
+    #orderForm {
+        margin-top: 28px;
+    }
+
+    #orderForm h2 {
+        font-size: 25px;
+    }
+
+    .infoBox {
+        font-size: 14px;
+        padding: 13px;
+    }
+
+    input,
+    textarea {
+        font-size: 16px;
+        padding: 14px 15px;
+    }
+
+    textarea {
+        min-height: 110px;
+    }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    #sendOrder {
+        height: 56px;
+        font-size: 17px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        margin-top: 45px;
+        padding: 25px 15px;
+    }
+
+}
+
+
+/* =====================================================
+   VEĽMI MALÉ MOBILY
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .container {
+        width: 93%;
+    }
+
+    .hero {
+        min-height: 55vh;
+    }
+
+    .logo {
+        width: 125px;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .sectionTitle h2 {
+        font-size: 28px;
+    }
+
+    .categoryName {
+        font-size: 22px;
+    }
+
+    .subcategoryTitle > div {
+        align-items: flex-start;
+    }
+
+    .subcategoryTitle strong {
+        font-size: 16px;
+    }
+
+    .subcategoryTitle span {
+        font-size: 10px;
+    }
+
+    .productRow {
+        padding: 14px;
+    }
+
+    #cart {
+        padding: 18px;
+    }
+
+}
+
+/* =====================================================
+   FACEBOOK ÁNO / NIE
+===================================================== */
+
+.facebookChoice {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-top: 10px;
+}
+
+.facebookChoice label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: auto;
+    margin: 0;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.facebookChoice input[type="radio"] {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    appearance: auto !important;
+    cursor: pointer;
+}
+
+#facebookNameGroup small {
+    display: block;
+    margin-top: 6px;
+    opacity: 0.7;
+    line-height: 1.5;
+}

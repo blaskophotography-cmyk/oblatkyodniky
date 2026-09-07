@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Vianočné oblátky by Nika</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <header class="hero">
+
+        <div class="heroInner">
+
+
+            <div class="heroText">
+
+                <img
+                    src="images/logo.png"
+                    alt="Vianočné oblátky by Nika"
+                    class="logo"
+                >
+
+                <div class="heroLine"></div>
+
+
+                <h1>
+                    Domáce vianočné oblátky
+                    pečené s láskou
+                </h1>
+
+
+                <p>
+                    Tradičná domáca výroba podľa rodinnej receptúry.
+                </p>
+
+
+                <a
+                    href="#ponuka"
+                    class="heroButton"
+                >
+                    Objednať
+                </a>
+
+            </div>
+
+
+            <div class="heroImage">
+
+                <img
+                    src="images/hero.png"
+                    alt="Domáce vianočné oblátky"
+                >
+
+            </div>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HLAVNÝ OBSAH
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             PONUKA
+        ================================================== -->
+
+        <section
+            class="offer"
+            id="ponuka"
+        >
+
+
+            <div class="offerHeader">
+
+                <span class="eyebrow">
+                    Vianočná ponuka
+                </span>
+
+
+                <h2>
+                    Vyberte si svoje oblátky
+                </h2>
+
+
+                <p>
+                    Otvorte kategóriu a vyberte si príchute,
+                    ktoré chcete objednať.
+                </p>
+
+            </div>
+
+
+            <div
+                id="products"
+                class="products"
+            >
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             OBJEDNÁVKA
+        ================================================== -->
+
+        <section class="orderSection">
+
+
+            <div class="orderLayout">
+
+
+                <div class="orderIntro">
+
+                    <span class="eyebrow">
+                        Vaša objednávka
+                    </span>
+
+
+                    <h2>
+                        Dokončenie objednávky
+                    </h2>
+
+
+                    <p>
+                        Skontrolujte vybrané produkty a
+                        vyplňte svoje kontaktné údaje.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     KARTA OBJEDNÁVKY
+                ================================================== -->
+
+                <div class="orderCard">
+
+
+                    <div class="cartHeader">
+
+                        <div>
+
+                            <span class="smallLabel">
+                                Objednávka
+                            </span>
+
+
+                            <h3>
+                                Vybrané produkty
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div
+                        id="cartItems"
+                        class="cartItems"
+                    >
+
+                        <div class="emptyCart">
+
+                            Zatiaľ nemáte vybrané žiadne produkty.
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="cartTotal">
+
+                        <span>
+                            Celkom
+                        </span>
+
+
+                        <strong id="totalPrice">
+                            0,00 €
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         FORMULÁR
+                    ================================================== -->
+
+                    <form
+                        id="orderForm"
+                        class="orderForm"
+                    >
+
+
+                        <div class="formTitle">
+                            Kontaktné údaje
+                        </div>
+
+
+                        <div class="infoBox">
+
+
+    Rozvoz zabezpečujeme iba v rámci týchto mestských častí v Bratislave:
+
+    <br><br>
+
+    <strong>Nové Mesto</strong><br>
+    <strong>Vrakuňa</strong><br>
+    <strong>Podunajské Biskupice</strong><br>
+    <strong>Ružinov</strong><br>
+    <strong>Rovinka</strong><br>
+    <strong>Dunajská Lužná</strong>
+
+</div>
+
+
+
+                        <!-- MENO -->
+
+                        <div class="formGroup">
+
+                            <label for="name">
+                                Meno a priezvisko *
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="name"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- =================================================
+                             FACEBOOK
+                        ================================================== -->
+
+                        <div class="formGroup">
+
+                            <label>
+                                Objednávate cez Facebook? *
+                            </label>
+
+
+                            <div class="facebookChoice">
+
+
+                                <label>
+
+                                    <input
+                                        type="radio"
+                                        name="facebookOrder"
+                                        value="ANO"
+                                        onchange="toggleFacebookName()"
+                                        required
+                                    >
+
+                                    Áno
+
+                                </label>
+
+
+                                <label>
+
+                                    <input
+                                        type="radio"
+                                        name="facebookOrder"
+                                        value="NIE"
+                                        onchange="toggleFacebookName()"
+                                        required
+                                    >
+
+                                    Nie
+
+                                </label>
+
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================================
+                             FACEBOOK MENO
+                        ================================================== -->
+
+                        <div
+                            class="formGroup"
+                            id="facebookNameGroup"
+                            style="display:none;"
+                        >
+
+                            <label for="facebook">
+                                Meno na Facebooku *
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="facebook"
+                                name="facebook"
+                                placeholder="Meno, pod ktorým Vás nájdeme na Facebooku"
+                            >
+
+
+                            <small>
+                                Uveďte prosím meno, pod ktorým Vás nájdeme
+                                na Facebooku.
+                            </small>
+
+                        </div>
+
+
+
+                        <!-- =================================================
+                             MLIEKO
+                        ================================================== -->
+
+                        <div
+                            class="formGroup"
+                            id="milkGroup"
+                            style="display:none;"
+                        >
+
+                            <label for="milk">
+                                Aké mlieko si želáte? *
+                            </label>
+
+
+                            <select
+                                id="milk"
+                                name="milk"
+                                onchange="toggleOtherMilk()"
+                            >
+
+                                <option value="">
+                                    Vyberte mlieko
+                                </option>
+
+
+                                <option value="Bezlaktózové mlieko">
+                                    Bezlaktózové mlieko
+                                </option>
+
+
+                                <option value="Ovsené mlieko">
+                                    Ovsené mlieko
+                                </option>
+
+
+                                <option value="Mandľové mlieko">
+                                    Mandľové mlieko
+                                </option>
+
+
+                                <option value="INE">
+                                    Iné
+                                </option>
+
+                            </select>
+
+
+
+                            <!-- INÉ MLIEKO -->
+
+                            <div
+                                id="otherMilkGroup"
+                                style="
+                                    display:none;
+                                    margin-top:15px;
+                                "
+                            >
+
+                                <label for="otherMilk">
+                                    Aké iné mlieko? *
+                                </label>
+
+
+                                <input
+                                    type="text"
+                                    id="otherMilk"
+                                    placeholder="Napíšte druh mlieka"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- TELEFÓN -->
+
+                        <div class="formGroup">
+
+                            <label for="phone">
+                                Telefón *
+                            </label>
+
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- ULICA -->
+
+                        <div class="formGroup">
+
+                            <label for="street">
+                                Ulica a číslo *
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="street"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- PSČ + MESTO -->
+
+                        <div class="formRow">
+
+
+                            <div class="formGroup">
+
+                                <label for="zip">
+                                    PSČ *
+                                </label>
+
+
+                                <input
+                                    type="text"
+                                    id="zip"
+                                    required
+                                >
+
+                            </div>
+
+
+
+                            <div class="formGroup">
+
+                                <label for="city">
+                                    Mesto / mestská časť *
+                                </label>
+
+
+                                <input
+                                    type="text"
+                                    id="city"
+                                    required
+                                >
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- EMAIL -->
+
+                        <div class="formGroup">
+
+                            <label for="email">
+                                Email
+                            </label>
+
+
+                            <input
+                                type="email"
+                                id="email"
+                            >
+
+                        </div>
+
+
+
+                        <!-- POZNÁMKA -->
+
+                        <div class="formGroup">
+
+                            <label for="note">
+                                Poznámka
+                            </label>
+
+
+                            <textarea
+                                id="note"
+                                rows="4"
+                                placeholder="Ak nám chcete niečo doplniť k objednávke..."
+                            ></textarea>
+
+                        </div>
+
+
+
+                        <!-- ODOSLAŤ -->
+
+                        <button
+                            type="submit"
+                            id="sendOrder"
+                            class="submitButton"
+                        >
+
+                            Odoslať objednávku
+
+                        </button>
+
+
+                    </form>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="footerInner">
+
+
+            <img
+                src="images/Logo.png"
+                alt="Vianočné oblátky by Nika"
+                style="
+                    width:120px;
+                    height:120px;
+                    object-fit:contain;
+                    display:block;
+                    margin:0 auto 15px;
+                "
+            >
+
+
+            <p>
+                Vianočné oblátky by Nika
+            </p>
+
+
+            <span>
+                © 2026
+            </span>
+
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="products.js"></script>
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
