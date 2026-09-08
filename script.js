@@ -1928,10 +1928,6 @@ fetch(SCRIPT_URL, {
                     originalText;
 
 
-                form.remove();
-
-                iframe.remove();
-
             },
             1500
         );
