@@ -1743,29 +1743,32 @@ orderForm.addEventListener(
    ODOSLANIE OBJEDNÁVKY
    ------------------------------------------------- */
 
-const orderData = new URLSearchParams();
+const orderFrame = document.createElement("iframe");
+orderFrame.name = "orderSubmitFrame";
+orderFrame.style.display = "none";
+document.body.appendChild(orderFrame);
+
+const submitForm = document.createElement("form");
+submitForm.method = "POST";
+submitForm.action = SCRIPT_URL;
+submitForm.target = "orderSubmitFrame";
+submitForm.style.display = "none";
 
 Object.keys(data).forEach(key => {
-    orderData.append(key, data[key]);
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = key;
+    input.value = data[key] ?? "";
+    submitForm.appendChild(input);
 });
 
-/*
-   fetch cez no-cors:
-   - funguje aj z mobilu
-   - Apps Script POST normálne prijme
-   - nepotrebujeme čítať odpoveď servera
-*/
-fetch(SCRIPT_URL, {
-    method: "POST",
-    mode: "no-cors",
-    headers: {
-        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
-    },
-    body: orderData.toString()
-}).catch(error => {
-    console.error("Chyba pri odosielaní objednávky:", error);
-});
+document.body.appendChild(submitForm);
+submitForm.submit();
 
+setTimeout(() => {
+    submitForm.remove();
+    orderFrame.remove();
+}, 5000);
         /* -------------------------------------------------
            PO ODOSLANÍ
         ------------------------------------------------- */
