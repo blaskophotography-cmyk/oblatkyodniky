@@ -1737,85 +1737,34 @@ orderForm.addEventListener(
             "Odosielam...";
 
 
-        const iframe =
-            document.createElement(
-                "iframe"
-            );
+    
 
+      /* -------------------------------------------------
+   ODOSLANIE OBJEDNÁVKY
+   ------------------------------------------------- */
 
-        iframe.name =
-            "orderFrame";
+const orderData = new URLSearchParams();
 
+Object.keys(data).forEach(key => {
+    orderData.append(key, data[key]);
+});
 
-        iframe.style.display =
-            "none";
-
-
-        document.body.appendChild(
-            iframe
-        );
-
-
-        const form =
-            document.createElement(
-                "form"
-            );
-
-
-        form.method =
-            "POST";
-
-
-        form.action =
-            SCRIPT_URL;
-
-
-        form.target =
-            "orderFrame";
-
-
-        form.style.display =
-            "none";
-
-
-        Object.keys(
-            data
-        ).forEach(
-            key => {
-
-                const input =
-                    document.createElement(
-                        "input"
-                    );
-
-
-                input.type =
-                    "hidden";
-
-
-                input.name =
-                    key;
-
-
-                input.value =
-                    data[key];
-
-
-                form.appendChild(
-                    input
-                );
-
-            }
-        );
-
-
-        document.body.appendChild(
-            form
-        );
-
-
-        form.submit();
-
+/*
+   fetch cez no-cors:
+   - funguje aj z mobilu
+   - Apps Script POST normálne prijme
+   - nepotrebujeme čítať odpoveď servera
+*/
+fetch(SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+    },
+    body: orderData.toString()
+}).catch(error => {
+    console.error("Chyba pri odosielaní objednávky:", error);
+});
 
         /* -------------------------------------------------
            PO ODOSLANÍ
