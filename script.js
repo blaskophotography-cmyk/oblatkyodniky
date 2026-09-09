@@ -6,7 +6,13 @@ const sendOrder = document.getElementById("sendOrder");
 
 const SCRIPT_URL =
     "https://script.google.com/macros/s/AKfycbxh7g7B8eW97umJ7zZYTGAIW6UNC7vSro-KoTu8UNqSpYmBLMBfUFYG647OV9tRXLIA4w/exec";
+
 const products = [
+
+    /* =====================================================
+       1. SLADKÉ
+    ===================================================== */
+
     {
         category: "SLADKÉ",
         type: "Sladké ploché",
@@ -18,6 +24,11 @@ const products = [
             { name: "Škoricové", price: 3.50 }
         ]
     },
+
+    /* =====================================================
+       2. TRUBIČKY
+    ===================================================== */
+
     {
         category: "TRUBIČKY",
         type: "Sladké trubičky",
@@ -29,6 +40,11 @@ const products = [
             { name: "Škoricové", price: 3.50 }
         ]
     },
+
+    /* =====================================================
+       3. SLANÉ
+    ===================================================== */
+
     {
         category: "SLANÉ",
         type: "Slané",
@@ -40,6 +56,11 @@ const products = [
             { name: "Cesnakové", price: 3.00 }
         ]
     },
+
+    /* =====================================================
+       4. BEZLAKTÓZOVÉ
+    ===================================================== */
+
     {
         category: "BEZLAKTÓZOVÉ",
         type: "Ploché",
@@ -51,6 +72,7 @@ const products = [
             { name: "Škoricové", price: 4.50 }
         ]
     },
+
     {
         category: "BEZLAKTÓZOVÉ",
         type: "Trubičky",
@@ -62,6 +84,7 @@ const products = [
             { name: "Škoricové", price: 4.50 }
         ]
     },
+
     {
         category: "BEZLAKTÓZOVÉ",
         type: "Slané",
@@ -72,6 +95,11 @@ const products = [
             { name: "S rascou", price: 4.50 }
         ]
     },
+
+    /* =====================================================
+       5. BEZLEPKOVÉ
+    ===================================================== */
+
     {
         category: "BEZLEPKOVÉ",
         type: "Ploché",
@@ -83,6 +111,7 @@ const products = [
             { name: "Škoricové", price: 4.50 }
         ]
     },
+
     {
         category: "BEZLEPKOVÉ",
         type: "Trubičky",
@@ -94,6 +123,7 @@ const products = [
             { name: "Škoricové", price: 4.50 }
         ]
     },
+
     {
         category: "BEZLEPKOVÉ",
         type: "Slané",
@@ -105,6 +135,11 @@ const products = [
             { name: "Bryndzové", price: 5.00 }
         ]
     },
+
+    /* =====================================================
+       6. BEZLEPKOVÉ + BEZLAKTÓZOVÉ
+    ===================================================== */
+
     {
         category: "BEZLEPKOVÉ + BEZLAKTÓZOVÉ",
         type: "Ploché",
@@ -116,6 +151,7 @@ const products = [
             { name: "Škoricové", price: 5.50 }
         ]
     },
+
     {
         category: "BEZLEPKOVÉ + BEZLAKTÓZOVÉ",
         type: "Trubičky",
@@ -127,6 +163,7 @@ const products = [
             { name: "Škoricové", price: 5.50 }
         ]
     },
+
     {
         category: "BEZLEPKOVÉ + BEZLAKTÓZOVÉ",
         type: "Slané",
@@ -137,6 +174,11 @@ const products = [
             { name: "Cesnakové", price: 5.50 }
         ]
     },
+
+    /* =====================================================
+       7. VEGÁNSKE
+    ===================================================== */
+
     {
         category: "VEGÁNSKE",
         type: "Ploché",
@@ -148,6 +190,7 @@ const products = [
             { name: "Škoricové", price: 4.50 }
         ]
     },
+
     {
         category: "VEGÁNSKE",
         type: "Trubičky",
@@ -159,6 +202,7 @@ const products = [
             { name: "Škoricové", price: 4.50 }
         ]
     },
+
     {
         category: "VEGÁNSKE",
         type: "Slané",
@@ -169,7 +213,9 @@ const products = [
             { name: "Cesnakové", price: 4.50 }
         ]
     }
+
 ];
+
 let cart = [];
 
 
@@ -202,7 +248,6 @@ function toggleFacebookName() {
     ) {
 
         return;
-
     }
 
 
@@ -325,7 +370,6 @@ function updateMilkField() {
     ) {
 
         return;
-
     }
 
 
@@ -386,7 +430,6 @@ function toggleOtherMilk() {
     ) {
 
         return;
-
     }
 
 
@@ -482,19 +525,15 @@ function renderProducts() {
 
 
             title.innerHTML = `
-
                 <div class="categoryLeft">
-
                     <div class="categoryName">
                         ${categoryName}
                     </div>
-
                 </div>
 
                 <div class="categoryArrow">
                     ↓
                 </div>
-
             `;
 
 
@@ -549,9 +588,7 @@ function renderProducts() {
 
 
                     subcategoryTitle.innerHTML = `
-
                         <div>
-
                             <strong>
                                 ${subcategory.type}
                             </strong>
@@ -559,9 +596,7 @@ function renderProducts() {
                             <span>
                                 ${subcategory.pack}
                             </span>
-
                         </div>
-
                     `;
 
 
@@ -614,6 +649,7 @@ function renderProducts() {
                             productName.className =
                                 "productName";
 
+
                             productName.textContent =
                                 product.name;
 
@@ -625,6 +661,7 @@ function renderProducts() {
 
                             productPrice.className =
                                 "productPrice";
+
 
                             productPrice.textContent =
                                 formatPrice(
@@ -925,8 +962,6 @@ function renderProducts() {
     );
 
 }
-
-
 /* =========================================================
    PRIDAŤ DO KOŠÍKA
 ========================================================= */
@@ -1052,19 +1087,13 @@ function renderCart() {
     ) {
 
         cartItems.innerHTML = `
-
             <div class="emptyCart">
-
                 Zatiaľ nemáte vybrané žiadne produkty.
-
             </div>
-
         `;
-
 
         totalPrice.textContent =
             "0,00 €";
-
 
         return;
 
@@ -1114,6 +1143,15 @@ function renderCart() {
                     item.price
                 ) +
                 " / balenie";
+
+
+            left.appendChild(
+                name
+            );
+
+            left.appendChild(
+                details
+            );
 
 
             const controls =
@@ -1167,21 +1205,6 @@ function renderCart() {
                 "+";
 
 
-            const remove =
-                document.createElement(
-                    "button"
-                );
-
-            remove.type =
-                "button";
-
-            remove.className =
-                "removeButton";
-
-            remove.textContent =
-                "Odstrániť";
-
-
             minus.addEventListener(
                 "click",
                 () => {
@@ -1207,7 +1230,22 @@ function renderCart() {
             );
 
 
-            remove.addEventListener(
+            const deleteButton =
+                document.createElement(
+                    "button"
+                );
+
+            deleteButton.type =
+                "button";
+
+            deleteButton.className =
+                "deleteCartButton";
+
+            deleteButton.textContent =
+                "×";
+
+
+            deleteButton.addEventListener(
                 "click",
                 () => {
 
@@ -1232,36 +1270,8 @@ function renderCart() {
             );
 
             controls.appendChild(
-                remove
+                deleteButton
             );
-
-
-            left.appendChild(
-                name
-            );
-
-            left.appendChild(
-                details
-            );
-
-            left.appendChild(
-                controls
-            );
-
-
-            const price =
-                document.createElement(
-                    "div"
-                );
-
-            price.className =
-                "cartItemPrice";
-
-            price.textContent =
-                formatPrice(
-                    item.price *
-                    item.quantity
-                );
 
 
             cartItem.appendChild(
@@ -1269,7 +1279,7 @@ function renderCart() {
             );
 
             cartItem.appendChild(
-                price
+                controls
             );
 
 
@@ -1290,831 +1300,343 @@ function renderCart() {
 
 
 /* =========================================================
-   UKONČENÉ OBJEDNÁVKY
+   FORMULÁR – ZÍSKANIE DÁT
 ========================================================= */
 
-function showClosedOrders() {
+function getFormData() {
 
-    const main =
-        document.querySelector(
-            "main"
+    const formData =
+        new FormData(
+            orderForm
         );
 
+    const data = {};
 
-    if (main) {
 
-        main.style.display =
-            "none";
+    formData.forEach(
+        (
+            value,
+            key
+        ) => {
 
-    }
+            data[key] =
+                value;
 
+        }
+    );
 
-    const heroButton =
-        document.querySelector(
-            ".heroButton"
-        );
 
-
-    if (heroButton) {
-
-        heroButton.style.display =
-            "none";
-
-    }
-
-
-    if (
-        document.getElementById(
-            "closedOrders"
-        )
-    ) {
-
-        return;
-
-    }
-
-
-    const closed =
-        document.createElement(
-            "section"
-        );
-
-
-    closed.id =
-        "closedOrders";
-
-
-    closed.innerHTML = `
-
-        <div style="
-            min-height:60vh;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            padding:60px 20px;
-            text-align:center;
-        ">
-
-            <div style="
-                max-width:700px;
-                margin:auto;
-            ">
-
-                <div style="
-                    font-size:52px;
-                    margin-bottom:20px;
-                ">
-                    🎄
-                </div>
-
-
-                <div style="
-                    font-size:13px;
-                    letter-spacing:2px;
-                    text-transform:uppercase;
-                    opacity:.65;
-                    margin-bottom:15px;
-                ">
-                    Vianočné oblátky by Nika
-                </div>
-
-
-                <h2 style="
-                    font-size:clamp(30px,5vw,52px);
-                    margin:0 0 20px;
-                ">
-                    Objednávky na Vianoce 2026
-                    sú ukončené
-                </h2>
-
-
-                <p style="
-                    font-size:18px;
-                    line-height:1.7;
-                    opacity:.75;
-                    margin:0;
-                ">
-
-                    Ďakujeme všetkým, ktorí si u nás
-                    objednali vianočné oblátky.
-
-                    <br><br>
-
-                    Vaše objednávky teraz pripravujeme
-                    a čoskoro Vás budeme kontaktovať.
-
-                </p>
-
-            </div>
-
-        </div>
-
-    `;
-
-
-    const header =
-        document.querySelector(
-            ".hero"
-        );
-
-
-    if (header) {
-
-        header.after(
-            closed
-        );
-
-    } else {
-
-        document.body.prepend(
-            closed
-        );
-
-    }
-
-}
-
-
-/* =========================================================
-   OTVORENÉ OBJEDNÁVKY
-========================================================= */
-
-function showOpenOrders() {
-
-    const main =
-        document.querySelector(
-            "main"
-        );
-
-
-    if (main) {
-
-        main.style.display =
-            "";
-
-    }
-
-
-    const heroButton =
-        document.querySelector(
-            ".heroButton"
-        );
-
-
-    if (heroButton) {
-
-        heroButton.style.display =
-            "";
-
-    }
-
-
-    const closed =
-        document.getElementById(
-            "closedOrders"
-        );
-
-
-    if (closed) {
-
-        closed.remove();
-
-    }
-
-}
-
-
-/* =========================================================
-   KONTROLA STAVU OBJEDNÁVOK
-========================================================= */
-
-function checkOrderStatus() {
-
-    const callbackName =
-        "orderStatusCallback_" +
-        Date.now();
-
-
-    const script =
-        document.createElement(
-            "script"
-        );
-
-
-    window[callbackName] =
-        function(data) {
-
-            if (
-                data &&
-                (
-                    data.status ===
-                        "ZATVORENÉ" ||
-                    data.status ===
-                        "CLOSED"
-                )
-            ) {
-
-                showClosedOrders();
-
-            } else {
-
-                showOpenOrders();
-
-            }
-
-
-            delete window[
-                callbackName
-            ];
-
-
-            if (
-                script.parentNode
-            ) {
-
-                script.parentNode.removeChild(
-                    script
-                );
-
-            }
-
-        };
-
-
-    script.src =
-        SCRIPT_URL +
-        "?status=orders&callback=" +
-        callbackName;
-
-
-    script.onerror =
-        function() {
-
-            console.error(
-                "Nepodarilo sa načítať stav objednávok."
+    data.products =
+        cart
+            .map(
+                item =>
+                    `${item.name} × ${item.quantity}`
+            )
+            .join(
+                "\n"
             );
 
 
-            showOpenOrders();
+    data.total =
+        getTotal()
+            .toFixed(2);
 
 
-            delete window[
-                callbackName
-            ];
-
-
-            if (
-                script.parentNode
-            ) {
-
-                script.parentNode.removeChild(
-                    script
-                );
-
-            }
-
-        };
-
-
-    document.body.appendChild(
-        script
-    );
+    return data;
 
 }
 
 
 /* =========================================================
-   ODOSLANIE OBJEDNÁVKY
+   VALIDÁCIA OBJEDNÁVKY
+========================================================= */
+
+function validateOrder() {
+
+    if (
+        cart.length === 0
+    ) {
+
+        alert(
+            "Najprv si prosím vyberte aspoň jeden produkt."
+        );
+
+        return false;
+
+    }
+
+
+    const selectedFacebook =
+        document.querySelector(
+            'input[name="facebookOrder"]:checked'
+        );
+
+
+    if (
+        selectedFacebook &&
+        selectedFacebook.value === "ANO"
+    ) {
+
+        const facebook =
+            document.getElementById(
+                "facebook"
+            );
+
+
+        if (
+            !facebook ||
+            !facebook.value.trim()
+        ) {
+
+            alert(
+                "Prosím vyplňte meno na Facebooku."
+            );
+
+            facebook?.focus();
+
+            return false;
+
+        }
+
+    }
+
+
+    const milk =
+        document.getElementById(
+            "milk"
+        );
+
+
+    if (
+        hasLactoseFreeProducts()
+    ) {
+
+        if (
+            !milk ||
+            !milk.value
+        ) {
+
+            alert(
+                "Prosím vyberte druh mlieka."
+            );
+
+            milk?.focus();
+
+            return false;
+
+        }
+
+
+        if (
+            milk.value === "INE"
+        ) {
+
+            const otherMilk =
+                document.getElementById(
+                    "otherMilk"
+                );
+
+
+            if (
+                !otherMilk ||
+                !otherMilk.value.trim()
+            ) {
+
+                alert(
+                    "Prosím uveďte, aké iné mlieko chcete."
+                );
+
+                otherMilk?.focus();
+
+                return false;
+
+            }
+
+        }
+
+    }
+
+
+    return true;
+
+}
+
+
+/* =========================================================
+   ODOŠLANNIE OBJEDNÁVKY
 ========================================================= */
 
 orderForm.addEventListener(
     "submit",
-    function(event) {
+    async function(event) {
 
         event.preventDefault();
 
 
-        /* -------------------------------------------------
-           KOŠÍK
-        ------------------------------------------------- */
-
         if (
-            cart.length === 0
+            !validateOrder()
         ) {
-
-            alert(
-                "Najprv pridajte aspoň jedno balenie."
-            );
 
             return;
 
         }
-
-
-        /* -------------------------------------------------
-           ZÁKLADNÉ ÚDAJE
-        ------------------------------------------------- */
-
-        const name =
-            document
-                .getElementById(
-                    "name"
-                )
-                .value
-                .trim();
-
-
-        const phone =
-            document
-                .getElementById(
-                    "phone"
-                )
-                .value
-                .trim();
-
-
-        const street =
-            document
-                .getElementById(
-                    "street"
-                )
-                .value
-                .trim();
-
-
-        const zip =
-            document
-                .getElementById(
-                    "zip"
-                )
-                .value
-                .trim();
-
-
-        const city =
-            document
-                .getElementById(
-                    "city"
-                )
-                .value
-                .trim();
-
-
-        const email =
-            document
-                .getElementById(
-                    "email"
-                )
-                .value
-                .trim();
-
-
-        const note =
-            document
-                .getElementById(
-                    "note"
-                )
-                .value
-                .trim();
-
-
-        /* -------------------------------------------------
-           FACEBOOK
-        ------------------------------------------------- */
-
-        const facebookChoice =
-            document.querySelector(
-                'input[name="facebookOrder"]:checked'
-            );
-
-
-        const facebook =
-            document
-                .getElementById(
-                    "facebook"
-                )
-                ?.value
-                .trim() || "";
-
-
-        if (!facebookChoice) {
-
-            alert(
-                "Vyberte, či objednávate cez Facebook."
-            );
-
-            return;
-
-        }
-
-
-        if (
-            facebookChoice.value ===
-                "ANO" &&
-            !facebook
-        ) {
-
-            alert(
-                "Ak objednávate cez Facebook, vyplňte aj meno na Facebooku."
-            );
-
-            return;
-
-        }
-
-
-        /* -------------------------------------------------
-           MLIEKO
-        ------------------------------------------------- */
-
-        const milkSelect =
-            document
-                .getElementById(
-                    "milk"
-                )
-                ?.value
-                .trim() || "";
-
-
-        const otherMilk =
-            document
-                .getElementById(
-                    "otherMilk"
-                )
-                ?.value
-                .trim() || "";
-
-
-        let milk =
-            milkSelect;
-
-
-        if (
-            milkSelect ===
-                "INE"
-        ) {
-
-            milk =
-                otherMilk;
-
-        }
-
-
-        if (
-            hasLactoseFreeProducts() &&
-            !milk
-        ) {
-
-            alert(
-                "Vyberte prosím druh mlieka."
-            );
-
-            return;
-
-        }
-
-
-        if (
-            hasLactoseFreeProducts() &&
-            milkSelect === "INE" &&
-            !otherMilk
-        ) {
-
-            alert(
-                "Napíšte prosím, aké iné mlieko požadujete."
-            );
-
-            return;
-
-        }
-
-
-        /* -------------------------------------------------
-           POVINNÉ ÚDAJE
-        ------------------------------------------------- */
-
-        if (
-            !name ||
-            !phone ||
-            !street ||
-            !zip ||
-            !city
-        ) {
-
-            alert(
-                "Vyplňte všetky povinné polia."
-            );
-
-            return;
-
-        }
-
-
-        /* -------------------------------------------------
-           POZNÁMKA
-        ------------------------------------------------- */
-
-        let finalNote =
-            note;
-
-
-        if (milk) {
-
-            finalNote =
-                "Mlieko: " +
-                milk +
-                (
-                    note
-                        ? " | " + note
-                        : ""
-                );
-
-        }
-
-
-        /* -------------------------------------------------
-           DÁTA
-        ------------------------------------------------- */
-
-        const data = {
-
-            name:
-                name,
-
-            facebook:
-                facebookChoice.value ===
-                    "ANO"
-                    ? facebook
-                    : "NIE",
-
-            facebookOrder:
-                facebookChoice.value,
-
-            phone:
-                phone,
-
-            street:
-                street,
-
-            zip:
-                zip,
-
-            city:
-                city,
-
-            email:
-                email,
-
-            note:
-                finalNote,
-
-            products:
-                cart
-                    .map(
-                        item =>
-                            `${item.name} x ${item.quantity}`
-                    )
-                    .join(" | "),
-
-            total:
-                formatPrice(
-                    getTotal()
-                )
-
-        };
-
-
-        /* -------------------------------------------------
-           ODOSIELANIE
-        ------------------------------------------------- */
-
-        sendOrder.disabled =
-            true;
 
 
         const originalText =
             sendOrder.textContent;
 
 
+        sendOrder.disabled =
+            true;
+
         sendOrder.textContent =
-            "Odosielam...";
+            "Odosielam…";
 
 
-    
+        const data =
+            getFormData();
 
-/* -------------------------------------------------
-   ODOSLANIE OBJEDNÁVKY
-   ------------------------------------------------- */
 
-const orderData = new URLSearchParams();
+        const orderData =
+            new URLSearchParams();
 
-Object.keys(data).forEach(key => {
-    orderData.append(key, data[key] ?? "");
-});
 
-try {
-    await fetch(SCRIPT_URL, {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-            "Content-Type":
-                "application/x-www-form-urlencoded;charset=UTF-8"
-        },
-        body: orderData.toString(),
-        keepalive: true
-    });
-} catch (error) {
-    console.error("Chyba pri odosielaní objednávky:", error);
+        Object.keys(
+            data
+        ).forEach(
+            key => {
 
-    sendOrder.disabled = false;
-    sendOrder.textContent = originalText;
-
-    alert(
-        "Objednávku sa nepodarilo odoslať. Skúste to prosím ešte raz."
-    );
-
-    return;
-}
-        /* -------------------------------------------------
-           PO ODOSLANÍ
-        ------------------------------------------------- */
-
-        setTimeout(
-            () => {
-
-                alert(
-                    "Ďakujeme za objednávku. Čoskoro Vás budeme kontaktovať."
+                orderData.append(
+                    key,
+                    data[key] ?? ""
                 );
 
-
-                orderForm.reset();
-
-
-                cart = [];
-
-
-                renderCart();
-
-                updateMilkField();
-
-
-                /* POČTY */
-
-                document
-                    .querySelectorAll(
-                        ".quantityValue"
-                    )
-                    .forEach(
-                        element => {
-
-                            element.textContent =
-                                "0";
-
-                        }
-                    );
-
-
-                /* KATEGÓRIE */
-
-                document
-                    .querySelectorAll(
-                        ".category.open"
-                    )
-                    .forEach(
-                        category => {
-
-                            category.classList.remove(
-                                "open"
-                            );
-
-                        }
-                    );
-
-
-                /* FACEBOOK */
-
-                const facebookGroup =
-                    document.getElementById(
-                        "facebookNameGroup"
-                    );
-
-
-                if (facebookGroup) {
-
-                    facebookGroup.style.display =
-                        "none";
-
-                }
-
-
-                const facebookInput =
-                    document.getElementById(
-                        "facebook"
-                    );
-
-
-                if (facebookInput) {
-
-                    facebookInput.required =
-                        false;
-
-                }
-
-
-                /* MLIEKO */
-
-                const milkGroup =
-                    document.getElementById(
-                        "milkGroup"
-                    );
-
-
-                if (milkGroup) {
-
-                    milkGroup.style.display =
-                        "none";
-
-                }
-
-
-                const milkInput =
-                    document.getElementById(
-                        "milk"
-                    );
-
-
-                if (milkInput) {
-
-                    milkInput.required =
-                        false;
-
-                    milkInput.value =
-                        "";
-
-                }
-
-
-                /* INÉ MLIEKO */
-
-                const otherMilkGroup =
-                    document.getElementById(
-                        "otherMilkGroup"
-                    );
-
-
-                if (otherMilkGroup) {
-
-                    otherMilkGroup.style.display =
-                        "none";
-
-                }
-
-
-                const otherMilkInput =
-                    document.getElementById(
-                        "otherMilk"
-                    );
-
-
-                if (otherMilkInput) {
-
-                    otherMilkInput.required =
-                        false;
-
-                    otherMilkInput.value =
-                        "";
-
-                }
-
-
-                /* TLAČIDLO */
-
-                sendOrder.disabled =
-                    false;
-
-
-                sendOrder.textContent =
-                    originalText;
-
-
-            },
-            1500
+            }
         );
+
+
+        try {
+
+            await fetch(
+                SCRIPT_URL,
+                {
+                    method:
+                        "POST",
+
+                    mode:
+                        "no-cors",
+
+                    headers: {
+                        "Content-Type":
+                            "application/x-www-form-urlencoded;charset=UTF-8"
+                    },
+
+                    body:
+                        orderData.toString(),
+
+                    keepalive:
+                        true
+                }
+            );
+
+
+            alert(
+                "Ďakujeme! Objednávka bola odoslaná."
+            );
+
+
+            cart =
+                [];
+
+            renderCart();
+
+            updateMilkField();
+
+            orderForm.reset();
+
+            toggleFacebookName();
+
+            sendOrder.disabled =
+                false;
+
+            sendOrder.textContent =
+                originalText;
+
+
+        } catch (error) {
+
+            console.error(
+                "Chyba pri odosielaní objednávky:",
+                error
+            );
+
+
+            sendOrder.disabled =
+                false;
+
+            sendOrder.textContent =
+                originalText;
+
+
+            alert(
+                "Objednávku sa nepodarilo odoslať. Skúste to prosím ešte raz."
+            );
+
+
+            return;
+
+        }
 
     }
 );
 
 
 /* =========================================================
-   SPUSTENIE
+   EVENTY FORMULÁRA
+========================================================= */
+
+document
+    .querySelectorAll(
+        'input[name="facebookOrder"]'
+    )
+    .forEach(
+        radio => {
+
+            radio.addEventListener(
+                "change",
+                toggleFacebookName
+            );
+
+        }
+    );
+
+
+const milk =
+    document.getElementById(
+        "milk"
+    );
+
+
+if (milk) {
+
+    milk.addEventListener(
+        "change",
+        toggleOtherMilk
+    );
+
+}
+
+
+/* =========================================================
+   ŠTART
 ========================================================= */
 
 renderProducts();
 
 renderCart();
 
+toggleFacebookName();
+
 updateMilkField();
 
-showOpenOrders();
 
-checkOrderStatus();
